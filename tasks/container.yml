@@ -1,0 +1,12 @@
+---
+- name: Criando a rede docker
+  community.general.docker_network:
+    name: "{{ service_container_network }}"
+
+- name: Criando container de serviço
+  community.general.docker_container:
+    name: "{{ service_container_name }}"
+    image: "{{ service_container_image }}"
+    state: present
+    networks:
+      - name: "{{ service_container_network }}"
