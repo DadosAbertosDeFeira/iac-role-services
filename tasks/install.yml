@@ -1,0 +1,6 @@
+---
+- name: Instalando bibliotecas python necessárias
+  pip:
+    name: "{{ item }}"
+  loop:
+   - "docker=={{ docker_version }}"

@@ -34,3 +34,7 @@ Essa role é usada para fazer deploy dos serviços que serão usados pelo maria-
     ```
     $ molecule destroy
     ```
+
+ - Variáveis da role
+
+ docker_version - versão da biblioteca docker usada nessa role
