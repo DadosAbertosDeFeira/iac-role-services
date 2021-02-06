@@ -1,1 +1,2 @@
 .venv
+molecule/*/tests/__pycache__
