@@ -7,6 +7,9 @@
   community.general.docker_container:
     name: "{{ service_container_name }}"
     image: "{{ service_container_image }}"
-    state: present
+    container_default_behavior: "compatibility"
+    purge_networks: "yes"
+    networks_cli_compatible: "no"
+    state: started
     networks:
       - name: "{{ service_container_network }}"
