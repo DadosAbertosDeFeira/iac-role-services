@@ -1,2 +1,3 @@
 # Do galaxy
 - src: dokku_bot.ansible_dokku
+- src: newrelic.newrelic-infra
