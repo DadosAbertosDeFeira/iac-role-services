@@ -1,0 +1,37 @@
+- name: Verify
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Bare include (free-form)
+    include_vars: ../../defaults/main.yml
+
+  - name: Check that dokku_global_cert module can parse output
+    dokku_global_cert:
+      state: absent
+
+  - name: Get dokku_hostname    # noqa 301
+    command: dokku domains:report --global
+    register: dokku_domains
+
+  - name: Check that dokku_hostname is set correctly
+    assert:
+      that:
+      - "'test.domain' in dokku_domains.stdout"
+      msg: |
+        hostname 'test.domain' not found in output of 'dokku domains':
+        {{ dokku_domains.stdout }}
+
+  # check apt sources configuration
+  # Note: cannot use apt module for this https://stackoverflow.com/questions/51410696
+  - name: Run apt update  # noqa 303 301
+    command: apt-get update
+    register: apt_update
+
+  - name: Check that apt update output does not contain warnigns
+    assert:
+      that:
+      - "'W:' not in apt_update.stderr"
+      msg: |
+        Found warnings in output of `apt update`:
+        {{ apt_update.stderr }}
