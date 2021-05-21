@@ -1,0 +1,6 @@
+warn_list:  # or 'skip_list' to silence them completely
+  - '106'  # Role name {} does not match ``^[a-z][a-z0-9_]+$`` pattern
+  - '204'  # Lines should be no longer than 160 chars
+  - '306'  # Shells that use pipes should set the pipefail option
+  - '701'  # meta/main.yml should contain relevant info
+  - '703'  # meta/main.yml default values should be changed
