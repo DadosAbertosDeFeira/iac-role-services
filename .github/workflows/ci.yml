@@ -27,6 +27,7 @@ jobs:
     strategy:
       matrix:
         python_version: [3.9]
+        molecule_ditro: [ubuntu1804, ubuntu2004]
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python ${{ matrix.python-version }}
@@ -41,5 +42,4 @@ jobs:
         run: |
           molecule test
         env:
-          DOCKER_CLIENT_TIMEOUT: 120
-          COMPOSE_HTTP_TIMEOUT: 120
+          MOLECULE_DITRO: ${{ matrix.molecule_distro }}
