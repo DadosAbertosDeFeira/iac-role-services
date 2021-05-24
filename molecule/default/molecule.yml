@@ -19,6 +19,9 @@ provisioner:
   name: ansible
   playbooks:
     converge: ${MOLECULE_PLAYBOOK:-converge.yml}
+  env:
+    DOCKER_CLIENT_TIMEOUT: 120
+    COMPOSE_HTTP_TIMEOUT: 120
 verifier:
   name: testinfra
   env:
