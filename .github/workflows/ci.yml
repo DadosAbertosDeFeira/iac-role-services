@@ -47,4 +47,4 @@ jobs:
         run: |
           molecule test --all
         env:
-          MOLECULE_DITRO: ${{ matrix.molecule_distro }}
+          MOLECULE_DISTRO: ${{ matrix.molecule_distro }}
