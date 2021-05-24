@@ -8,7 +8,7 @@ dependency:
 driver:
   name: docker
 platforms:
-  - name: ubuntu-18.04-iac-role-services
+  - name: instance 
     image: "geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu1804}-ansible:latest"
     command: ${MOLECULE_DOCKER_COMMAND:-""}
     volumes:
