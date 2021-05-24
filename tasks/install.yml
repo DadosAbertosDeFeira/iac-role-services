@@ -3,4 +3,4 @@
   pip:
     name: "{{ item }}"
   loop:
-   - "docker=={{ docker_version }}"
+    - "docker=={{ docker_version }}"

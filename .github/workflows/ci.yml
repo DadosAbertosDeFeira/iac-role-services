@@ -45,6 +45,6 @@ jobs:
           sudo systemctl start docker
       - name: Test with molecule
         run: |
-          molecule test
+          molecule test --all
         env:
           MOLECULE_DITRO: ${{ matrix.molecule_distro }}
