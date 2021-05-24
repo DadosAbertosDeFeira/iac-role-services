@@ -27,7 +27,7 @@ jobs:
     strategy:
       matrix:
         python_version: [3.9]
-        molecule_ditro: [ubuntu1804, ubuntu2004]
+        molecule_distro: [ubuntu1804, ubuntu2004]
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python ${{ matrix.python-version }}
