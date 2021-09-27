@@ -1,15 +1,15 @@
 ---
 - name: Criando a rede docker
   community.general.docker_network:
-    name: "{{ service_container_network }}"
+    name: "{{ service.container_network }}"
 
 - name: Criando container de serviço
   community.general.docker_container:
-    name: "{{ service_container_name }}"
-    image: "{{ service_container_image }}"
+    name: "{{ service.container_name }}"
+    image: "{{ service.container_image }}"
     container_default_behavior: "compatibility"
     purge_networks: "yes"
     networks_cli_compatible: "no"
     state: started
     networks:
-      - name: "{{ service_container_network }}"
+      - name: "{{ service.container_network }}"

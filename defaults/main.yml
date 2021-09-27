@@ -1,6 +1,8 @@
 ---
 # defaults file for iac-role-basica
-service_container_name: tika-server
-service_container_image: dadosabertosfsa/tika-server:1.25
-service_container_network: dokku_services
+services:
+  - container_name: tika-server
+    container_image: dadosabertosfsa/tika-server:1.25
+    container_network: dokku_services
+
 docker_version: 4.4.1
