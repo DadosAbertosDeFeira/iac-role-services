@@ -1,4 +1,7 @@
 ---
 # tasks file for iac-role-services
 - import_tasks: install.yml
-- import_tasks: container.yml
+- include_tasks: container.yml
+  loop: "{{ services }}"
+  loop_control:
+    loop_var: service
