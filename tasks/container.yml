@@ -8,6 +8,7 @@
     name: "{{ service_container_name }}"
     image: "{{ service_container_image }}"
     container_default_behavior: "compatibility"
+    restart_policy: unless-stopped
     purge_networks: "yes"
     networks_cli_compatible: "no"
     state: started
